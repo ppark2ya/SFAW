@@ -1,0 +1,20 @@
+/* header.css */
+@CHARSET "UTF-8";
+#nav{
+	background-color: #2b2b2b;
+	height: 50px;
+	line-height: 50px;
+}
+#nav ul{ overflow: hidden; padding-left:0; }
+#nav ul li{ float: left; padding-top: 5px;}
+#nav ul li a{
+	text-decoration: none;
+	color: #ffffff;
+	padding: 0 5px 0 15px;
+}
+#nav ul li a:first-child{
+	margin-left: 16px;
+}
+#nav ul li a:hover{
+	color:#cecece;
+}

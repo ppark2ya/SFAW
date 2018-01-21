@@ -1,0 +1,102 @@
+/* list.css */
+@CHARSET "UTF-8";
+.on-off{
+	background-color: transparent;
+	margin: 3px 0 0 3px;
+	color: #ffffff;
+	border:0;
+	display: none;
+}
+#selectList{
+	padding-top: 100px;
+	text-align: center;
+}
+#selectList img{
+	margin: 0 auto;
+}
+#selectList img:hover{
+	cursor: pointer;
+}
+.left{
+	display: inline-block;
+	text-align: right;
+}
+.right{
+	display: inline-block;
+}
+.left button{
+	background-color: transparent;
+	border-width: 0px;
+	color:#ffffff;
+	height: 300px;
+}
+.right button{
+	background-color: transparent;
+	border-width: 0px;
+	color:#ffffff;
+	height: 300px;
+}
+.musicName{
+	font-family: 'Ubuntu', sans-serif;
+	color: #ffffff;
+	font-size: 3em;
+	font-weight: bold;
+}
+/* 모바일 */
+@media (min-width: 300px) and (max-width: 449px){
+	.on-off{
+		display: inline;
+	}
+	#introImg{
+		background-image: url("/resources/images/introImg350.png");
+		height: 600px;
+	}
+	#selectList{
+		padding-top: 20px;
+	}
+	.blank{
+		padding: 0;
+	}
+	.left{
+		margin-left: 15px;
+		padding: 0px 0px 0px 10px;
+		width: 40px;
+	}
+	.left button{
+		margin-right: 10px;
+		height: 200px;
+	}
+	.right{
+		padding-left: 0px;
+		width: 40px;
+	}
+	.right button{
+		height: 200px;
+	}
+	.imgSrc{
+		height: 100px;
+		padding-top: 45px;
+	}
+}
+@media (min-width: 450px) {
+	#introImg{
+		background-image: url("/resources/images/introImg768.png");
+		height: 650px;
+	}
+}
+/* 테블릿 */
+@media (min-width: 992px) {
+	#introImg{
+		background-image: url("/resources/images/introImg992.png");
+		height: 700px;
+	}
+	.box{
+		height: 400px;
+	}
+}
+/* 데스크탑 */
+@media (min-width: 1200px) {
+	#introImg{
+		background-image: url("/resources/images/introImg1200.png");
+	}
+}

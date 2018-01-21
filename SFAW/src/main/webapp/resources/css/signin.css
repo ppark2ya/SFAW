@@ -1,0 +1,63 @@
+/* signup.css */
+@CHARSET "UTF-8";
+#signin{
+	background-color: #f9f9f9;
+}
+#box{
+	width: 400px;
+	margin: 0 auto;
+}
+#errMsg{
+	margin-top: 10px;
+	display: none;
+	color: #cf1b27;
+}
+#signin button{
+	margin-top: 5px;
+}
+/* 모바일 */
+@media (max-width: 450px) {
+	#box{
+		width: 250px;
+		margin: 0 auto;
+	}
+	#box .form-control{
+		width: 100%;
+		text-align: left;
+	}
+	#idForm label{
+		padding-right: 120px;
+	}
+	#idForm input[type=checkbox]{
+		margin-right: 5px;
+	}
+	#pwdForm label{
+		padding-right: 85px;
+	}
+}
+@media (min-width:451px) and (max-width: 767px) {
+	#box .form-control{
+		width: 100%;
+	}
+	#idForm label{
+		padding-right: 270px;
+	}
+	#idForm input[type=checkbox]{
+		margin-right: 5px;
+	}
+	#pwdForm label{
+		padding-right: 235px;
+	}
+}
+/* signup 과 동일 */
+@media (min-width: 768px) {
+	#idForm label{
+		padding-right: 270px;
+	}
+	#idForm input[type=checkbox]{
+		margin-right: 5px;
+	}
+	#pwdForm label{
+		padding-right: 235px;
+	}
+}
