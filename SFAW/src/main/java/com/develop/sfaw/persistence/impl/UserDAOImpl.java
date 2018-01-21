@@ -3,19 +3,31 @@ package com.develop.sfaw.persistence.impl;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.develop.sfaw.common.CommonStatus;
 import com.develop.sfaw.persistence.UserDAO;
-import com.develop.sfaw.repository.UserVO;
+import com.develop.sfaw.repository.UserAPI;
 
-@Repository
+@Repository("userDAO")
 public class UserDAOImpl implements UserDAO{
 
 	@Autowired
 	private SqlSession session;
 
 	@Override
-	public UserVO getUser() {
-		UserVO vo = session.selectOne("user.getUser");
-		return vo;
+	public UserAPI getUserInfo(String id) {
+		return session.selectOne("user.getUserInfo", id);
+	}
+
+	@Override
+	@Transactional
+	public String createUser(UserAPI vo) {
+		int result = session.insert("user.createUser", vo);
+		if(result != 0) {
+			return CommonStatus.SUCCESS;
+		}else {
+			return CommonStatus.FAIL;
+		}
 	}
 }

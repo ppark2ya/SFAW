@@ -4,6 +4,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.develop.sfaw.repository.UserVO" alias="userVO"/>
+		<typeAlias type="java.util.Map" alias="map"/>
+		<typeAlias type="com.develop.sfaw.repository.UserAPI" alias="userAPI"/>
 	</typeAliases>
 </configuration>

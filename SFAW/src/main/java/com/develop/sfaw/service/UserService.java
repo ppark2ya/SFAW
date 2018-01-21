@@ -1,7 +1,8 @@
 package com.develop.sfaw.service;
 
-import com.develop.sfaw.repository.UserVO;
+import com.develop.sfaw.repository.UserAPI;
 
 public interface UserService {
-	public UserVO getUser();
+	public UserAPI getUserInfo(String id);
+	public String createUser(UserAPI vo);
 }

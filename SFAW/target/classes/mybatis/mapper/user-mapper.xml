@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
-	<select id="getUser" resultType="userVO">
+	<select id="getUserInfo" resultType="map">
 		SELECT
-			*
+			id,
+			pwd,
+			name,
+			email,
+			addr,
+			enabled,
+			authority,
+			reg_dt as regDt,
+			reg_tm as regTm,
+			upd_dt as updDt,
+			upd_tm as updTm
 		FROM
-			user
+			tb_user
+		WHERE
+			id=#{id}
 	</select>
+
+	<insert id="createUser" parameterType="userAPI">
+		INSERT INTO tb_user
+		(id, pwd, name, email, addr, reg_dt, reg_tm, upd_dt, upd_tm)
+		value(#{id}, #{pwd}, #{name}, #{email}, #{addr}, curdate()+0, curtime()+0, curdate()+0, curtime()+0)
+	</insert>
 </mapper>

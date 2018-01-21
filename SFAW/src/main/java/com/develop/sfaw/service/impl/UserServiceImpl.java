@@ -1,22 +1,27 @@
 package com.develop.sfaw.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Service;
 
 import com.develop.sfaw.persistence.UserDAO;
-import com.develop.sfaw.repository.UserVO;
+import com.develop.sfaw.repository.UserAPI;
 import com.develop.sfaw.service.UserService;
 
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService{
 
-	@Autowired
-	private UserDAO dao;
+	@Resource(name = "userDAO")
+	private UserDAO userDao;
 
 	@Override
-	public UserVO getUser() {
+	public UserAPI getUserInfo(String id) {
+		return userDao.getUserInfo(id);
+	}
 
-		return dao.getUser();
+	@Override
+	public String createUser(UserAPI vo) {
+		return userDao.createUser(vo);
 	}
 
 
