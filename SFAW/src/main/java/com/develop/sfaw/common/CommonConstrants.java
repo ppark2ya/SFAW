@@ -1,6 +1,6 @@
 package com.develop.sfaw.common;
 
-public class CommonStatus {
+public class CommonConstrants {
 	public static final String SUCCESS = "SUCCESS";
 	public static final String FAIL = "FAIL";
 }

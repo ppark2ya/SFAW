@@ -1,4 +1,4 @@
-package com.develop.sfaw.security;
+package com.develop.sfaw.util;
 
 import javax.annotation.Resource;
 

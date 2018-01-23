@@ -13,7 +13,8 @@
 
 	<!-- 접근 권한 설정 -->
 	<sec:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
-	<sec:intercept-url pattern="/**" access="permitAll"/>
+	<sec:intercept-url pattern="/user/**" access="permitAll"/>
+	<sec:intercept-url pattern="/" access="hasRole('ROLE_USER')"/>
 
 	<!-- login form 설정 -->
 	<sec:form-login login-page="/user/signin"

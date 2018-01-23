@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.develop.sfaw.common.CommonStatus;
+import com.develop.sfaw.common.CommonConstrants;
 import com.develop.sfaw.repository.UserAPI;
-import com.develop.sfaw.security.SHAEncoder;
 import com.develop.sfaw.service.UserService;
+import com.develop.sfaw.util.SHAEncoder;
 
 @RestController
 @RequestMapping("/user")
@@ -55,7 +55,7 @@ public class UserController {
 		String result = userService.createUser(api);
 		log.info("createUser-{}. Result : {}.", (logCount++), result);
 
-		if(result.equals(CommonStatus.SUCCESS))	{
+		if(result.equals(CommonConstrants.SUCCESS))	{
 			model.setViewName("redirect:/");
 			return model;
 		}else {

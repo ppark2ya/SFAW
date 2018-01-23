@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.develop.sfaw.common.CommonStatus;
+import com.develop.sfaw.common.CommonConstrants;
 import com.develop.sfaw.persistence.UserDAO;
 import com.develop.sfaw.repository.UserAPI;
 
@@ -25,9 +25,9 @@ public class UserDAOImpl implements UserDAO{
 	public String createUser(UserAPI vo) {
 		int result = session.insert("user.createUser", vo);
 		if(result != 0) {
-			return CommonStatus.SUCCESS;
+			return CommonConstrants.SUCCESS;
 		}else {
-			return CommonStatus.FAIL;
+			return CommonConstrants.FAIL;
 		}
 	}
 }
