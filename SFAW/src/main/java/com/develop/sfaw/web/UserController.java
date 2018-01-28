@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.develop.sfaw.common.CommonConstrants;
+import com.develop.sfaw.common.CommonConstants;
 import com.develop.sfaw.repository.UserAPI;
 import com.develop.sfaw.service.UserService;
 import com.develop.sfaw.util.SHAEncoder;
@@ -55,7 +55,7 @@ public class UserController {
 		String result = userService.createUser(api);
 		log.info("createUser-{}. Result : {}.", (logCount++), result);
 
-		if(result.equals(CommonConstrants.SUCCESS))	{
+		if(result.equals(CommonConstants.SUCCESS))	{
 			model.setViewName("redirect:/");
 			return model;
 		}else {
