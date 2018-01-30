@@ -21,7 +21,8 @@ public class UserLoginFailureHandler implements AuthenticationFailureHandler {
 		log.info("LocalizedMessage : {}.", auth.getLocalizedMessage());
 		log.info("Message : {}.", auth.getMessage());
 
-		req.setAttribute("errMsg", auth.getMessage());
+		// req.setAttribute("errMsg", auth.getMessage());
+		req.setAttribute("errMsg", "아이디 혹은 패스워드를 확인해주세요");
 		req.getRequestDispatcher("/WEB-INF/views/user/signinPage.jsp").forward(req, res);
 	}
 }
