@@ -1,12 +1,14 @@
-<form name="signin" action="/user/signin" role="form" method="POST" ng-submit="submit()">
-	<!--
-		HTTP Status 403 - Invalid CSRF Token 'null' was found
-		on the request parameter '_csrf' or header 'X-CSRF-TOKEN' 해결책
-	-->
-	<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
-	<label for="uid">id</label>
-	<input type="text" name="id"/>
-	<label for="pwd">Password</label>
-	<input type="password" name="pwd" />
-	<button type="submit">confirm</button>
-</form>
+<section>
+	<form name="signin" action="/user/signin" role="form" method="POST" ng-submit="submit()">
+		<!--
+			HTTP Status 403 - Invalid CSRF Token 'null' was found
+			on the request parameter '_csrf' or header 'X-CSRF-TOKEN' 해결책
+		-->
+		<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
+		<label for="uid">id</label>
+		<input type="text" name="id"/>
+		<label for="pwd">Password</label>
+		<input type="password" name="pwd" />
+		<button type="submit">confirm</button>
+	</form>
+</section>

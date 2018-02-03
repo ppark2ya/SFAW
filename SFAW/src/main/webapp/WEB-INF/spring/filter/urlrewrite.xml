@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlrewrite default-match-type="wildcard">
+	<rule>
+		<from>/user/signin</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/user/signup</from>
+		<to>/index.html</to>
+	</rule>
+</urlrewrite>

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+body{
+	padding: 15px 15px 0px 15px;
+}
+ul li{
+	list-style:none;
+}
+a{
+	text-decoration: none !important;
+	color: #000;
+}

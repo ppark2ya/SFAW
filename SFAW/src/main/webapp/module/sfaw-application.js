@@ -6,12 +6,15 @@ var SFAW_APP = angular.module("SFAW_APP", ['ngRoute']);
 
 
 //root directory == webapp
-SFAW_APP.config(function($routeProvider, $httpProvider) {
+SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 
-	$routeProvider.when("/", {
-		templateUrl : "/templates/home.html",
-		controller : "home"
-	})
+	$locationProvider.html5Mode(true);
+
+	$routeProvider
+//	.when("/", {
+//		templateUrl : "/templates/home.html",
+//		controller : "home"
+//	})
 	.when("/user/signin", {
 		templateUrl : "/templates/signin.html",
 		controller : "signin"

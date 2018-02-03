@@ -28,14 +28,6 @@ public class UserController {
 	@Resource(name = "userService")
 	private UserService userService;
 
-	@GetMapping("/signin")
-	public ModelAndView signIn(ModelAndView model) {
-		int logCount = 1;
-		log.info("signIn-{}.", (logCount++));
-		model.setViewName("/user/signinPage");
-		return model;
-	}
-
 	@GetMapping("/signup")
 	public ModelAndView signUp() {
 		int logCount = 1;
