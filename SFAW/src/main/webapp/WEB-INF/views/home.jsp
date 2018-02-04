@@ -25,31 +25,31 @@
 				<ul>
 					<li><a href="user/signin">LOGIN</a></li>
 					<li><a href="user/signup">JOIN</a></li>
-					<li><a href="">CART</a></li>
-					<li><a href="">MY PAGE</a></li>
-					<li><a href="">SEARCH</a></li>
+					<li><a href="user/cart">CART</a></li>
+					<li><a href="user/mypage">MY PAGE</a></li>
+					<li><a href="search">SEARCH</a></li>
 				</ul>
 			</div>
 		</header>
 		<aside id="side-menu">
 			<ul>
-				<li>
+				<li id="shop">
 					<span>SHOP</span>
-					<ul>
-						<li><a href="">SUIT</a></li>
-						<li><a href="">OUTER</a></li>
-						<li><a href="">TOP</a></li>
-						<li><a href="">PANTS</a></li>
-						<li><a href="">SHOES &amp; BAG</a></li>
-						<li><a href="">ACC</a></li>
+					<ul id="sub-menu">
+						<li><a href="shop/suit">SUIT</a></li>
+						<li><a href="shop/outer">OUTER</a></li>
+						<li><a href="shop/top">TOP</a></li>
+						<li><a href="shop/pants">PANTS</a></li>
+						<li><a href="shop/shoesNbag">SHOES &amp; BAG</a></li>
+						<li><a href="shop/acc">ACC</a></li>
 					</ul>
 				</li>
 				<li><a href="notice">NOTICE</a></li>
-				<li><a href="qna">Q&nbsp;&amp;&nbsp;A</a></li>
+				<li><a href="qna">Q &amp; A</a></li>
 				<li><a href="review">REVIEW</a></li>
 			</ul>
 		</aside>
-		<ng-view></ng-view>
+		<ng-view/>
 	</div>
 </body>
 </html>

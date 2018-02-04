@@ -4,7 +4,6 @@
 
 var SFAW_APP = angular.module("SFAW_APP", ['ngRoute']);
 
-
 //root directory == webapp
 SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 

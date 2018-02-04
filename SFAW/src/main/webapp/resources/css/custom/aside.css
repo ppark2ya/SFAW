@@ -1,0 +1,27 @@
+@charset "UTF-8";
+#side-menu{
+	float:left;
+}
+#shop:hover{
+	cursor: pointer;
+}
+#side-menu>ul{
+	padding-left: 27px;
+}
+#side-menu>ul>li{
+	font-size: 20px;
+	padding-top: 15px;
+}
+#shop{
+	padding-top: 40px !important;
+}
+#sub-menu{
+	padding-left: 27px;
+}
+#sub-menu li a{
+	color: #aeaeae !important;
+	font-size: 15px;
+}
+#sub-menu a:hover{
+	color:#cecece !important;
+}
