@@ -20,6 +20,7 @@ public class UserAPI{
 	private String addr;
 	private int enabled;	// 0: 사용 불가, 1: 사용 가능
 	private String authority;
+	private String point;
 	private String regDt;
 	private String regTm;
 	private String updDt;

@@ -28,13 +28,6 @@ public class UserController {
 	@Resource(name = "userService")
 	private UserService userService;
 
-	@GetMapping("/signup")
-	public ModelAndView signUp() {
-		int logCount = 1;
-		log.info("signUp-{}.", (logCount++));
-		return new ModelAndView("/user/signupPage");
-	}
-
 	@PostMapping("/createUser")
 	public ModelAndView createUser(ModelAndView model, @ModelAttribute UserAPI api) {
 		int logCount = 1;

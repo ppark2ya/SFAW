@@ -15,12 +15,20 @@ SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 //		controller : "home"
 //	})
 	.when("/user/signin", {
-		templateUrl : "/templates/signin.html",
+		templateUrl : "/templates/user/signin.html",
 		controller : "signin"
 	})
 	.when("/user/signup", {
-		templateUrl : "/templates/signup.html",
-		controller : ""
+		templateUrl : "/templates/user/signup.html",
+		controller : "signup"
+	})
+	.when("/user/searchID", {
+		templateUrl : "/templates/user/searchID.html",
+		controller : "searchID"
+	})
+	.when("/user/forgetPwd", {
+		templateUrl : "/templates/user/forgetPwd.html",
+		controller : "forgetPwd"
 	})
 	.otherwise({
 		redirectTo : "/"
@@ -31,4 +39,7 @@ SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 })
 .controller("signin", function($scope, $http, $location){
 
-});
+})
+.controller("signup", function($scope, $http, $location){
+
+})

@@ -6,6 +6,6 @@
 	</rule>
 	<rule>
 		<from>/user/signup</from>
-		<to>/index.html</to>
+		<to>/WEB-INF/views/home.jsp</to>
 	</rule>
 </urlrewrite>

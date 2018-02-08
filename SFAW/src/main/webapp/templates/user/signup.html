@@ -1,0 +1,82 @@
+<section id="signup-form">
+	<div class="col-xs-3"></div>
+	<div class="col-xs-4">
+		<div id="join-member">
+			<span>SIGN UP</span>
+		</div>
+		<div class="row">
+		<form action="/user/createUser" method="POST" id="myForm" class="form-horizontal" name="myForm" novalidate>
+			<div class="form-group has-feedback"
+				ng-class="{'has-success': myForm.id.$valid && canUse, 'has-error': (myForm.id.$invalid && myForm.id.$dirty) || (myForm.id.$dirty && !canUse)}">
+				<label for="id" class="col-sm-3 control-label">ID</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" id="id" name="id" placeholder="Enter your ID"
+						ng-model="checkId.id"
+						ng-required="true"
+						ng-keyup="getId()"
+						ng-minlength="4"
+						ng-maxlength="12"
+					/>
+					<span class="form-control-feedback glyphicon glyphicon-ok"
+						ng-show="myForm.id.$valid && canUse"></span>
+					<span class="form-control-feedback glyphicon glyphicon-remove"
+						ng-show="(myForm.id.$invalid && myForm.id.$dirty) || (myForm.id.$dirty && !canUse)"></span>
+					<p class="help-block" ng-show="myForm.id.$dirty && !canUse">이미 있는 ID입니다</p>
+					<p class="help-block" ng-show="myForm.id.$error.minlength">4글자 이상 입력하세요</p>
+					<p class="help-block" ng-show="myForm.id.$error.maxlength">12글자 이하 입력하세요</p>
+				</div>
+			</div>
+
+			<div class="form-group has-feedback"
+				ng-class="{'has-success':myForm.password.$valid, 'has-error':myForm.password.$invalid && myForm.password.$dirty}">
+				<label for="password" class="col-sm-3 control-label">Password</label>
+				<div class="col-sm-6">
+					<input type="password" class="form-control" id="password" name="password" placeholder="Enter your password"
+						ng-model="password"
+						ng-required="true"
+						ng-pattern="/^(?=.*[a-zA-Z])(?=.*\d)(?=.*\W).{6,20}$/"/>
+					<span class="form-control-feedback glyphicon glyphicon-ok" ng-show="myForm.password.$valid"></span>
+					<span class="form-control-feedback glyphicon glyphicon-remove" ng-show="myForm.password.$invalid && myForm.password.$dirty"></span>
+					<p class="help-block" ng-show="myForm.password.$invalid && myForm.password.$dirty">한 개 이상의 특수문자와 숫자를 포함하여<br/> 6글자 이상 입력하세요</p>
+				</div>
+			</div>
+
+			<div class="form-group has-feedback"
+				ng-class="{'has-success':myForm.name.$valid, 'has-error':myForm.name.$invalid && myForm.name.$dirty}">
+				<label for="name" class="col-sm-3 control-label">Name</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" id="name" name="name" placeholder="Enter your nickname"
+						ng-model="name"
+						ng-required="true"
+						ng-minlength="2"
+						ng-maxlength="10"/>
+					<span class="form-control-feedback glyphicon glyphicon-ok" ng-show="myForm.name.$valid"></span>
+					<span class="form-control-feedback glyphicon glyphicon-remove" ng-show="myForm.name.$invalid && myForm.name.$dirty"></span>
+					<p class="help-block" ng-show="myForm.name.$invalid && myForm.name.$dirty">닉네임은 2글자 이상 10글자 이하로 입력해주세요</p>
+				</div>
+			</div>
+
+			<div class="form-group has-feedback"
+				ng-class="{'has-success':myForm.email.$valid, 'has-error':myForm.email.$invalid && myForm.email.$dirty}">
+				<label for="email" class="col-sm-3 control-label">Email</label>
+				<div class="col-sm-6">
+					<input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
+						ng-model="email"
+						ng-required="true"
+						ng-pattern="/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/"/>
+					<span class="form-control-feedback glyphicon glyphicon-ok" ng-show="myForm.email.$valid"></span>
+					<span class="form-control-feedback glyphicon glyphicon-remove" ng-show="myForm.email.$invalid && myForm.email.$dirty"></span>
+					<p class="help-block" ng-show="myForm.email.$invalid && myForm.email.$dirty">이메일을 다시 입력해주세요</p>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-12 text-center">
+					<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">Create an account</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	</div>
+	<div class="col-xs-4"></div>
+</section>

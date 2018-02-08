@@ -4,7 +4,7 @@
 		<div id="login">
 			<span>LOG IN</span>
 		</div>
-		<form name="signin" action="/user/signin" role="form" method="POST"">
+		<form name="signin" action="/user/signin" method="POST"">
 			<!--
 				HTTP Status 403 - Invalid CSRF Token 'null' was found
 				on the request parameter '_csrf' or header 'X-CSRF-TOKEN' 해결책
@@ -14,8 +14,11 @@
 			<input type="text" name="id"/>
 			<label for="pwd">Password</label>
 			<input type="password" name="pwd" />
-			<button type="submit">confirm</button>
+			<button type="submit">LOG IN</button>
 		</form>
+		<a href="#/user/searchID">SEARCH ID</a>
+		<a href="#/user/forgetPwd">FORGET PASSWORD?</a>
+		<a href="#/user/signup">JOIN MEMBER</a>
 	</div>
 	<div class="col-xs-4"></div>
 </section>
