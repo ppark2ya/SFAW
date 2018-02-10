@@ -1,24 +1,30 @@
 <section id="signin-form">
-	<div class="col-xs-3"></div>
-	<div class="col-xs-4">
-		<div id="login">
-			<span>LOG IN</span>
-		</div>
-		<form name="signin" action="/user/signin" method="POST"">
-			<!--
-				HTTP Status 403 - Invalid CSRF Token 'null' was found
-				on the request parameter '_csrf' or header 'X-CSRF-TOKEN' 해결책
-			-->
-			<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
-			<label for="uid">ID</label>
-			<input type="text" name="id"/>
-			<label for="pwd">Password</label>
-			<input type="password" name="pwd" />
-			<button type="submit">LOG IN</button>
-		</form>
-		<a href="#/user/searchID">SEARCH ID</a>
-		<a href="#/user/forgetPwd">FORGET PASSWORD?</a>
-		<a href="#/user/signup">JOIN MEMBER</a>
-	</div>
-	<div class="col-xs-4"></div>
+   <div class="col-xs-3"></div>
+   <div class="col-xs-4">
+      <div id="login">
+         <span>LOG IN</span>
+      </div>
+      <form name="signin" action="/user/signin" method="POST">
+         <!--
+            HTTP Status 403 - Invalid CSRF Token 'null' was found
+            on the request parameter '_csrf' or header 'X-CSRF-TOKEN' 해결책
+         -->
+         <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/><br>
+         <div>
+         	<input type="text" value="ID" disabled/>
+         </div>
+         <input type="text" name="id"/>
+         <div>
+         	<input type="text" value="Password" disabled/>
+         </div>
+         <input type="password" name="pwd" />
+         <button type="submit">LOG IN</button>
+
+         <div id="signin-href">
+            <a href="#/user/searchID">SEARCH ID</a>
+            <a href="#/user/forgetPwd">FORGET PASSWORD?</a>
+            <a href="#/user/signup">JOIN MEMBER</a>
+         </div>
+      </form>
+   <div class="col-xs-4"></div>
 </section>
