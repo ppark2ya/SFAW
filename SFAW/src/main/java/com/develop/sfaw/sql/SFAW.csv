@@ -1,13 +1,13 @@
 ﻿테이블명,,,,,,tb_user,사용자 정보 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
-1,id,pk,,not null,VARCHAR(100),아이디,
+1,id,pk,,,VARCHAR(100),아이디,
 2,pwd,,,not null,VARCHAR(100),패스워드,
 3,name,,,not null,VARCHAR(30),사용자 이름,
 4,email,,,not null,VARCHAR(100),이메일주소,
 5,addr,,,not null,VARCHAR(100),거주지 주소,
-6,enabled,,1,not null,INT,아이디 사용 가능 여부,"0: 사용불가, 1: 사용가능"
-7,authority,,ROLE_USER,not null,VARCHAR(20),접근 권한,"ROLE_ADMIN, ROLE_USER, ROLE_ANANYMOUS"
-8,point,,0,not null,INT,적립포인트,
+6,enabled,,1,,INT,아이디 사용 가능 여부,"0: 사용불가, 1: 사용가능"
+7,authority,,ROLE_USER,,VARCHAR(20),접근 권한,"ROLE_ADMIN, ROLE_USER, ROLE_ANANYMOUS"
+8,point,,0,,INT,적립포인트,
 9,reg_dt,,,,VARCHAR(8),등록일자,yyMMdd
 10,reg_tm,,,,VARCHAR(6),등록시간,HHmmss
 11,upd_dt,,,,VARCHAR(8),수정일자,
@@ -15,14 +15,14 @@
 ,,,,,,,
 테이블명,,,,,,tb_goods,상품 정보 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
-1,gds_cd,pk,,not null,VARCHAR(10),상품코드,
+1,gds_cd,pk,,,VARCHAR(10),상품코드,
 2,class,,,not null,VARCHAR(20),상품 대분류,"suit, outer, top, pants, acc, shoes & bags"
 3,color,,,,VARCHAR(4),색상,"c001: black, c002: white, c003: gray, … 코드화"
 4,size,,,not null,VARCHAR(4),사이즈,"s001: m or 90, s002 : L or 95 …. 코드화"
 5,gds_nm,,,not null,VARCHAR(300),상품명,
 6,gds_img,,,not null,VARCHAR(300),상품 이미지,
 7,price,,,not null,INT,가격,
-8,enabled,,1,not null,INT,사용 가능 여부,"0: 사용불가, 1: 사용가능"
+8,enabled,,1,,INT,사용 가능 여부,"0: 사용불가, 1: 사용가능"
 9,quantity,,,not null,INT,재고 수량,
 10,reg_dt,,,,VARCHAR(8),등록일자,
 11,reg_tm,,,,VARCHAR(6),등록시간,
@@ -31,13 +31,13 @@
 ,,,,,,,
 테이블명,,,,,,tb_order,주문 정보 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
-1,txid,pk,,not null,VARCHAR(30),트랜잭션 아이디,db function을 활용할것. SFAW + currentTime + seq
+1,txid,pk,,,VARCHAR(30),트랜잭션 아이디,db function을 활용할것. SFAW + currentTime + seq
 2,ord_no,,,not null,VARCHAR(30),주문 번호,db function을 활용할것. OrdNo + colorCd + sizeCd + price
-3,id,fk,,not null,VARCHAR(100),구매자 아이디,
-4,gds_cd,fk,,not null,VARCHAR(10),상품코드,
-5,use_cl,,0,not null,INT,상품 취소 여부,"0: 주문, 1: 취소"
-7,enabled,,1,not null,INT,사용 가능 여부,"0: 사용불가, 1: 사용가능"
-8,quantity,,1,not null,INT,주문 수량,
+3,id,fk,,not null,VARCHAR(100),구매자 아이디,references tb_user(id) on delete cascade
+4,gds_cd,fk,,not null,VARCHAR(10),상품코드,references tb_goods(gds_cd) on delete cascade
+5,use_cl,,0,,INT,상품 취소 여부,"0: 주문, 1: 취소"
+7,enabled,,1,,INT,사용 가능 여부,"0: 사용불가, 1: 사용가능"
+8,quantity,,1,,INT,주문 수량,
 9,reg_dt,,,,VARCHAR(8),등록일자,
 10,reg_tm,,,,VARCHAR(6),등록시간,
 11,upd_dt,,,,VARCHAR(8),수정일자,
@@ -50,15 +50,15 @@
 ,,,,,,,
 테이블명,,,,,,tb_code,코드 관리 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
-1,code,pk,,not null,VARCHAR(4),코드,"색상, 사이즈에 대한 정보를 코드화해서 저장"
-2,desc,,,not null,VARCHAR(100),설명,해당 코드에 대한 설명
+1,code,pk,,,VARCHAR(4),코드,"색상, 사이즈에 대한 정보를 코드화해서 저장"
+2,descript,,,not null,VARCHAR(100),설명,해당 코드에 대한 설명
 ,,,,,,,
 테이블명,,,,,,tb_notice,공지 게시판 관리 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
-1,idx,pk,,not null,INT,,auto_increment
+1,idx,pk,,,INT,,auto_increment
 2,title,,,not null,VARCHAR(200),글 제목,
 3,noti,,,,TEXT,글 내용,
-4,writer,fk,,not null,VARCHAR(100),글 작성자,"ROLE_ADMIN 쓰기권한, ROLE_USER 읽기권한.."
+4,writer,fk,,not null,VARCHAR(100),글 작성자(ROLE_ADMIN),references tb_user(id) on delete cascade
 5,reg_dt,,,,VARCHAR(8),등록일자,
 6,reg_tm,,,,VARCHAR(6),등록시간,
 7,upd_dt,,,,VARCHAR(8),수정일자,
@@ -66,11 +66,11 @@
 ,,,,,,,
 테이블명,,,,,,tb_qna,Q & A 관리 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
-1,idx,pk,,not null,INT,,auto_increment
+1,idx,pk,,,INT,,auto_increment
 2,title,,,not null,VARCHAR(200),글 제목,
 3,content,,,,TEXT,글 내용,
-4,writer,fk,,not null,VARCHAR(100),글 작성자,"ROLE_ADMIN 쓰기권한, ROLE_USER 읽기권한.."
-5,gds_cd,fk,,,VARCHAR(10),상품 코드,문의 내용에 상품에 관한 정보를 넣을 시 필요
+4,writer,fk,,not null,VARCHAR(100),"글 작성자(ROLE_ADMIN, ROLE_USER)",references tb_user(id) on delete cascade
+5,gds_cd,fk,,,VARCHAR(10),상품 코드(문의 내용에 상품에 관한 정보를 넣을 시 필요),references tb_goods(gds_cd) on delete cascade
 6,reg_dt,,,,VARCHAR(8),등록일자,
 7,reg_tm,,,,VARCHAR(6),등록시간,
 8,upd_dt,,,,VARCHAR(8),수정일자,
@@ -78,9 +78,9 @@
 ,,,,,,,
 테이블명,,,,,,tb_reply,게시판 댓글 관리 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
-1,rno,pk,,not null,INT,,auto_increment
-2,writer,fk,,not null,VARCHAR(100),댓글 작성자,ROLE_ADMIN 만 댓글 작성 가능
-3,qna_idx,fk,,not null,INT,댓글이 달린 qna의 키값,
+1,rno,pk,,,INT,,auto_increment
+2,writer,fk,,not null,VARCHAR(100),댓글 작성자(ROLE_ADMIN),references tb_user(id) on delete cascade
+3,qna_idx,fk,,not null,INT,댓글이 달린 qna의 키값,references tb_qna(idx) on delete cascade
 4,reply,,,,TEXT,댓글 내용,
 5,reg_dt,,,,VARCHAR(8),등록일자,
 6,reg_tm,,,,VARCHAR(6),등록시간,
@@ -89,5 +89,4 @@
 ,,,,,,,
 테이블명,,,,,,tb_trans_result,결제 결과 관리 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
-1,txid,pk,,not null,VARCHAR(30),,
-2,,,,,,,
+1,txid,pk,,,VARCHAR(30),,

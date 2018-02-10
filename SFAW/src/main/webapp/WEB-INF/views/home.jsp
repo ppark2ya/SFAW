@@ -23,7 +23,17 @@
 			</div>
 			<div id="nav">
 				<ul>
-					<li><a href="user/signin">LOGIN</a></li>
+					<c:if test="${not empty sessionScope }">
+						<li>
+							<form action="user/signout" method="POST">
+						    	<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }"/>
+						    	<button id="signout-btn" type="submit">LOGOUT</button>
+							</form>
+						</li>
+					</c:if>
+					<c:if test="${empty sessionScope }">
+						<li><a href="user/signin">LOGIN</a></li>
+					</c:if>
 					<li><a href="user/signup">JOIN</a></li>
 					<li><a href="user/cart">CART</a></li>
 					<li><a href="user/mypage">MY PAGE</a></li>

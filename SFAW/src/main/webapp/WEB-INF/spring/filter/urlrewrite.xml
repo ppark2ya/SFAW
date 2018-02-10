@@ -8,4 +8,52 @@
 		<from>/user/signup</from>
 		<to>/WEB-INF/views/home.jsp</to>
 	</rule>
+	<rule>
+		<from>/user/cart</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/user/mypage</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/search</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/shop/suit</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/shop/outer</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/shop/top</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/shop/pants</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/shop/shoesNbag</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/shop/acc</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/notice</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/qna</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
+	<rule>
+		<from>/review</from>
+		<to>/WEB-INF/views/home.jsp</to>
+	</rule>
 </urlrewrite>
