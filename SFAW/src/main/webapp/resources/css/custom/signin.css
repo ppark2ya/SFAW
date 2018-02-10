@@ -12,12 +12,7 @@
    border-bottom: 1px solid #000;
    font-weight: 700;
 }
-#signin-sign{
-   display:block;
-   font-size:2rem;
-   padding: 1rem;
-}
-.col-xs-4 form *{
+.signin form *{
 	display: block;
 	margin: 0 auto;
 }
@@ -44,7 +39,7 @@ form[name=signin] button{
 form[name=signin] button:hover{
 	font-weight: 600;
 }
-form input{
+form[name=signin] input{
 	width: 25.5rem;
 }
 input[name=id], input[name=pwd]{
@@ -60,7 +55,7 @@ input[name=id], input[name=pwd]{
    margin-bottom: 10px;
    line-height: 3.3rem;
 }
-.col-xs-4 form div{
+.signin form div{
 	margin: 0 auto;
 }
 #signin-href a:nth-child(3){
