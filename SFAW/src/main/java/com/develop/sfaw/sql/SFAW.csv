@@ -46,7 +46,7 @@
 테이블명,,,,,,tb_sequence,시퀀스 관리 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
 1,seq,,,not null,INT,시퀀스,
-2,type,,,not null,VARCHAR(50),시퀀스 타입,해당 시퀀스가 관리하는 테이블
+2,seq_nm,pk,,not null,VARCHAR(50),시퀀스 타입,해당 시퀀스가 관리하는 테이블
 ,,,,,,,
 테이블명,,,,,,tb_code,코드 관리 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
