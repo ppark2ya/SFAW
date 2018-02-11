@@ -165,6 +165,13 @@ public class MysqlTableCreate {
 			log.info("Create Table End-{}.", logCount++);
 		}catch(Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }
