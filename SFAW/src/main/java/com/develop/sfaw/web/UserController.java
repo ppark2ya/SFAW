@@ -1,5 +1,8 @@
 package com.develop.sfaw.web;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,14 +32,27 @@ public class UserController {
 	@Resource(name = "userService")
 	private UserService userService;
 
+	@GetMapping("/checkId")
+	public Map<String, Object> checkId(@RequestParam(defaultValue="", required=false) String id) {
+		int logCount = 1;
+		log.info("checkId-start-{}.", logCount++);
+
+		String result = userService.checkId(id);
+		log.info("checkId-End-{}. Result : {}", (logCount++), result);
+
+		Map<String, Object> map = new HashMap<>();
+		map.put("canUse", result.equals(CommonConstants.SUCCESS));
+		return map;
+	}
+
 	@PostMapping("/createUser")
 	public ModelAndView createUser(ModelAndView model, @ModelAttribute UserAPI api) {
 		int logCount = 1;
-		log.info("createUser-{}", (logCount++));
+		log.info("createUser-start-{}", (logCount++));
 
-		String dbpw = encoder.encoding(api.getPwd());
-		api.setPwd(dbpw);
-		log.info("createUser-{}. Encoding password : {}.", (logCount++), api.getPwd());
+		String dbpw = encoder.encoding(api.getPassword());
+		api.setPassword(dbpw);
+		log.info("createUser-{}. Encoding password : {}.", (logCount++), api.getPassword());
 
 		String result = userService.createUser(api);
 		log.info("createUser-{}. Result : {}.", (logCount++), result);

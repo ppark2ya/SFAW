@@ -1,7 +1,7 @@
 ﻿테이블명,,,,,,tb_user,사용자 정보 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
 1,id,pk,,,VARCHAR(100),아이디,
-2,pwd,,,not null,VARCHAR(100),패스워드,
+2,password,,,not null,VARCHAR(100),패스워드,
 3,name,,,not null,VARCHAR(30),사용자 이름,
 4,email,,,not null,VARCHAR(100),이메일주소,
 5,addr,,,not null,VARCHAR(100),거주지 주소,
@@ -16,7 +16,7 @@
 테이블명,,,,,,tb_goods,상품 정보 테이블
 번호,컬럼명,키,default,null,타입,내용,상세
 1,gds_cd,pk,,,VARCHAR(10),상품코드,
-2,class,,,not null,VARCHAR(20),상품 대분류,"suit, outer, top, pants, acc, shoes & bags"
+2,gds_type,,,not null,VARCHAR(20),상품 대분류,"suit, outer, top, pants, acc, shoes & bags"
 3,color,,,,VARCHAR(4),색상,"c001: black, c002: white, c003: gray, … 코드화"
 4,size,,,not null,VARCHAR(4),사이즈,"s001: m or 90, s002 : L or 95 …. 코드화"
 5,gds_nm,,,not null,VARCHAR(300),상품명,

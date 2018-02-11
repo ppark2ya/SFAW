@@ -70,6 +70,19 @@
 				</div>
 			</div>
 
+			<div class="form-group has-feedback"
+				ng-class="{'has-success':myForm.addr.$valid, 'has-error':myForm.addr.$invalid && myForm.addr.$dirty}">
+				<label for="addr" class="col-sm-3 control-label">Address</label>
+				<div class="col-sm-6">
+					<input type="text" class="form-control" id="addr" name="addr" placeholder="Enter your Address"
+						ng-model="addr"
+						ng-required="true"/>
+					<span class="form-control-feedback glyphicon glyphicon-ok" ng-show="myForm.addr.$valid"></span>
+					<span class="form-control-feedback glyphicon glyphicon-remove" ng-show="myForm.addr.$invalid && myForm.addr.$dirty"></span>
+					<p class="help-block" ng-show="myForm.addr.$invalid && myForm.addr.$dirty">주소를 다시 입력해주세요</p>
+				</div>
+			</div>
+
 			<div class="form-group">
 				<div class="col-sm-12 text-center">
 					<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">Create an account</button>

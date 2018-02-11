@@ -66,7 +66,7 @@
 	</beans:bean>
 
 	<sec:jdbc-user-service data-source-ref="dataSource" id="userService"
-		users-by-username-query="SELECT ID as username, PWD as password, ENABLED as enabled
+		users-by-username-query="SELECT ID as username, password, ENABLED as enabled
 									FROM tb_user WHERE ID=?"
 		authorities-by-username-query="SELECT ID as username, AUTHORITY as authority
 											FROM tb_user u WHERE ID=?" />

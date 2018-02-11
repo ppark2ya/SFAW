@@ -30,6 +30,16 @@ public class UserServiceImpl implements UserService{
 		}
 	}
 
+	@Override
+	public String checkId(String id) {
+		int result = userMapper.checkId(id);
+		if(result == 0) {
+			return CommonConstants.SUCCESS;
+		}else {
+			return CommonConstants.FAIL;
+		}
+	}
+
 
 
 

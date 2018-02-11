@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.develop.sfaw.persistence.UserMaper">
+<mapper namespace="com.develop.sfaw.persistence.UserMapper">
 	<select id="getUserInfo" resultType="userAPI">
 		SELECT
 			id,
-			pwd,
+			password,
 			name,
 			email,
 			addr,
 			enabled,
 			authority,
+			point,
 			reg_dt as regDt,
 			reg_tm as regTm,
 			upd_dt as updDt,
@@ -22,7 +23,16 @@
 
 	<insert id="createUser" parameterType="userAPI">
 		INSERT INTO tb_user
-		(id, pwd, name, email, addr, reg_dt, reg_tm, upd_dt, upd_tm)
-		value(#{id}, #{pwd}, #{name}, #{email}, #{addr}, curdate()+0, curtime()+0, curdate()+0, curtime()+0)
+		(id, password, name, email, addr, reg_dt, reg_tm, upd_dt, upd_tm)
+		value(#{id}, #{password}, #{name}, #{email}, #{addr}, curdate()+0, curtime()+0, curdate()+0, curtime()+0)
 	</insert>
+
+	<select id="checkId" parameterType="java.lang.String" resultType="int">
+		SELECT
+			count(*)
+		FROM
+			tb_user
+		WHERE
+			id=#{id}
+	</select>
 </mapper>
