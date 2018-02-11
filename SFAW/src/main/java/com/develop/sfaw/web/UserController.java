@@ -38,7 +38,7 @@ public class UserController {
 		log.info("checkId-start-{}.", logCount++);
 
 		String result = userService.checkId(id);
-		log.info("checkId-End-{}. Result : {}", (logCount++), result);
+		log.info("checkId-end-{}. Result : {}", (logCount++), result);
 
 		Map<String, Object> map = new HashMap<>();
 		map.put("canUse", result.equals(CommonConstants.SUCCESS));
@@ -55,7 +55,7 @@ public class UserController {
 		log.info("createUser-{}. Encoding password : {}.", (logCount++), api.getPassword());
 
 		String result = userService.createUser(api);
-		log.info("createUser-{}. Result : {}.", (logCount++), result);
+		log.info("createUser-end-{}. Result : {}.", (logCount++), result);
 
 		if(result.equals(CommonConstants.SUCCESS))	{
 			model.setViewName("redirect:/");
