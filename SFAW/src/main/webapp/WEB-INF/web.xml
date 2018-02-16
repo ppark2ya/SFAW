@@ -48,6 +48,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
+	<!-- angular 사용시 url에 #붙는걸 없애주는 필터 등록 -->
 	<filter>
 		<filter-name>UrlRewriteFilter</filter-name>
 		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
@@ -61,5 +62,15 @@
 		<url-pattern>/*</url-pattern>
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+
+	<!-- REST API 사용을 위한 필터 설정(PUT, PATCH, DELETE method 사용가능) -->
+	<filter>
+		<filter-name>httpMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>httpMethodFilter</filter-name>
+		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 </web-app>

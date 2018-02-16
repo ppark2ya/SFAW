@@ -6,6 +6,7 @@ public class NoticeAPI {
 	private String title;	// 제목
 	private String noti;	// 글 내용
 	private String writer;	// 작성자
+	private int enabled;
 	private String regDt;
 	private String regTm;
 	private String updDt;
@@ -59,7 +60,11 @@ public class NoticeAPI {
 	public void setUpdTm(String updTm) {
 		this.updTm = updTm;
 	}
-
-
+	public int getEnabled() {
+		return enabled;
+	}
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
+	}
 
 }

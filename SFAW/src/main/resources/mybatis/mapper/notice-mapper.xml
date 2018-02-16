@@ -2,4 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.develop.sfaw.persistence.NoticeMapper">
 
+	<select id="getNotiList" parameterType="map" resultType="noticeAPI">
+		SELECT
+			SQL_CALC_FOUND_ROWS
+			idx,
+			title,
+			noti,
+			writer,
+			enabled,
+			reg_dt as regDt,
+			reg_tm as regTm,
+			upd_dt as updDt,
+			upd_tm as updTm
+		FROM
+			tb_notice
+		ORDER BY
+			idx DESC LIMIT #{pageNum}-1, #{viewRows}
+	</select>
+
+	<select id="totalPages" resultType="int">
+		SELECT FOUND_ROWS() as totalRows
+	</select>
 </mapper>

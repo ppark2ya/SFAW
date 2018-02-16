@@ -16,19 +16,27 @@ SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 //	})
 	.when("/user/signin", {
 		templateUrl : "/templates/user/signin.html",
-		controller : "signin"
+		controller : "signinCtrl"
 	})
 	.when("/user/signup", {
 		templateUrl : "/templates/user/signup.html",
-		controller : "signup"
+		controller : "signupCtrl"
 	})
 	.when("/user/searchID", {
 		templateUrl : "/templates/user/searchID.html",
-		controller : "searchID"
+		controller : "searchIDCtrl"
 	})
 	.when("/user/forgetPwd", {
 		templateUrl : "/templates/user/forgetPwd.html",
-		controller : "forgetPwd"
+		controller : "forgetPwdCtrl"
+	})
+	.when("/qna", {
+		templateUrl : "/templates/board/qna.html",
+		controller : "qnaCtrl"
+	})
+	.when("/notice/:pageNum", {
+		templateUrl : "/templates/board/notice.html",
+		controller : "noticeCtrl"
 	})
 	.otherwise({
 		redirectTo : "/"
@@ -37,10 +45,10 @@ SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 	$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 
 })
-.controller("signin", function($scope, $http, $location){
+.controller("signinCtrl", function(){
 
 })
-.controller("signup", function($scope, $http, $location){
+.controller("signupCtrl", function($scope, $http){
 
 	// 아이디를 사용할 수 있는지 여부를 저장하는 변수
 	$scope.canUse = false;
@@ -48,15 +56,40 @@ SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 	$scope.checkId = {};
 	// keyup 이벤트가 발생할 때 실행되는 함수
 	$scope.getId = function() {
-		console.log($scope.checkId);
 		// ajax 통신으로 아이디 중복검사
 		$http({
 			url : "/user/checkId",
 			method : "GET",
 			params : $scope.checkId
-		}).success(function(data) {
-			$scope.canUse = data.canUse;
-			console.log($scope.canUse);
+		}).success(function(response) {
+			$scope.canUse = response.canUse;
+		});
+	}
+})
+.controller("noticeCtrl", function($scope, $http, $routeParams){
+	var pageNum = $routeParams.pageNum;
+	angular.element(document).ready(function(){
+		$http({
+			url: "/notice/getNotiList/" + pageNum,
+			method: "GET",
+			params: {}
+		}).success(function(response){
+
+		});
+	});
+
+	$scope.prevPage = function(){
+		$http({
+			url: "/notice/prevPage",
+			method: "GET"
 		})
 	}
+
+	$scope.nextPage = function(){
+		$http({
+			url: "/notice/nextPage",
+			method: "GET"
+		})
+	}
+
 })

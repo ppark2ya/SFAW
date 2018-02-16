@@ -1,7 +1,10 @@
 package com.develop.sfaw.persistence;
 
-import com.develop.sfaw.repository.UserAPI;
+import java.util.List;
+import java.util.Map;
+
+import com.develop.sfaw.repository.NoticeAPI;
 
 public interface NoticeMapper {
-
+	public List<NoticeAPI> getNotiList(Map<String, Object> params);
 }

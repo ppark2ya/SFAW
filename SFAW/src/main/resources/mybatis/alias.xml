@@ -6,5 +6,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<typeAlias type="java.util.Map" alias="map"/>
 		<typeAlias type="com.develop.sfaw.repository.UserAPI" alias="userAPI"/>
+		<typeAlias type="com.develop.sfaw.repository.NoticeAPI" alias="noticeAPI"/>
 	</typeAliases>
 </configuration>
