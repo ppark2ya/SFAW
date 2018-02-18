@@ -54,7 +54,7 @@
 						<li><a href="shop/acc">ACC</a></li>
 					</ul>
 				</li>
-				<li><a href="notice">NOTICE</a></li>
+				<li><a href="notice/1">NOTICE</a></li>
 				<li><a href="qna">Q &amp; A</a></li>
 				<li><a href="review">REVIEW</a></li>
 			</ul>

@@ -4,23 +4,26 @@
 
 	<select id="getNotiList" parameterType="map" resultType="noticeAPI">
 		SELECT
-			SQL_CALC_FOUND_ROWS
 			idx,
 			title,
 			noti,
 			writer,
 			enabled,
-			reg_dt as regDt,
+			DATE_FORMAT(reg_dt, '%Y-%m-%d') as regDt,
 			reg_tm as regTm,
 			upd_dt as updDt,
 			upd_tm as updTm
 		FROM
 			tb_notice
 		ORDER BY
-			idx DESC LIMIT #{pageNum}-1, #{viewRows}
+			idx DESC LIMIT #{pageNum}, #{viewRows}
 	</select>
 
-	<select id="totalPages" resultType="int">
-		SELECT FOUND_ROWS() as totalRows
+	<select id="totalRows" resultType="int">
+		SELECT
+			count(*) as totalRows
+		FROM
+			tb_notice
 	</select>
+
 </mapper>

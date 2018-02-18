@@ -1,0 +1,19 @@
+@charset "UTF-8";
+#page-display{
+	float: left;
+	width: 100%;
+	padding-left: 25px;
+	padding-right : 20px;
+	margin: 0 auto;
+	text-align: center;
+}
+#page-display a{
+	display: inline-block;
+	font-size: 18px;
+}
+#page-display div{
+	display: inline-block;
+}
+#page-display div a{
+	padding: 0 6px;
+}

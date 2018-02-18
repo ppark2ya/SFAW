@@ -44,16 +44,16 @@
 		<from>/shop/acc</from>
 		<to>/WEB-INF/views/home.jsp</to>
 	</rule>
-	<rule>
-		<from>/notice</from>
+	<rule match-type="regex">
+		<from>^/notice/([0-9]+)$</from>
 		<to>/WEB-INF/views/home.jsp</to>
 	</rule>
-	<rule>
-		<from>/qna</from>
+	<rule match-type="regex">
+		<from>^/qna/([0-9]+)$</from>
 		<to>/WEB-INF/views/home.jsp</to>
 	</rule>
-	<rule>
-		<from>/review</from>
+	<rule match-type="regex">
+		<from>^/review/([0-9]+)$</from>
 		<to>/WEB-INF/views/home.jsp</to>
 	</rule>
 </urlrewrite>

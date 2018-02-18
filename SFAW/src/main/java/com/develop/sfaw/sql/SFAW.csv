@@ -1,94 +1,94 @@
-Å×ÀÌºí¸í,,,,,,tb_user,»ç¿ëÀÚ Á¤º¸ Å×ÀÌºí
-¹øÈ£,ÄÃ·³¸í,Å°,default,null,Å¸ÀÔ,³»¿ë,»ó¼¼
-1,id,pk,,,VARCHAR(100),¾ÆÀÌµğ,
-2,password,,,not null,VARCHAR(100),ÆĞ½º¿öµå,
-3,name,,,not null,VARCHAR(30),»ç¿ëÀÚ ÀÌ¸§,
-4,email,,,not null,VARCHAR(100),ÀÌ¸ŞÀÏÁÖ¼Ò,
-5,addr,,,not null,VARCHAR(100),°ÅÁÖÁö ÁÖ¼Ò,
-6,enabled,,1,,INT,¾ÆÀÌµğ »ç¿ë °¡´É ¿©ºÎ,"0: »ç¿ëºÒ°¡, 1: »ç¿ë°¡´É"
-7,authority,,ROLE_USER,,VARCHAR(20),Á¢±Ù ±ÇÇÑ,"ROLE_ADMIN, ROLE_USER, ROLE_ANANYMOUS"
-8,point,,0,,INT,Àû¸³Æ÷ÀÎÆ®,
-9,reg_dt,,,,VARCHAR(8),µî·ÏÀÏÀÚ,yyMMdd
-10,reg_tm,,,,VARCHAR(6),µî·Ï½Ã°£,HHmmss
-11,upd_dt,,,,VARCHAR(8),¼öÁ¤ÀÏÀÚ,
-12,upd_tm,,,,VARCHAR(6),¼öÁ¤½Ã°£,
+ï»¿í…Œì´ë¸”ëª…,,,,,,tb_user,ì‚¬ìš©ì ì •ë³´ í…Œì´ë¸”
+ë²ˆí˜¸,ì»¬ëŸ¼ëª…,í‚¤,default,null,íƒ€ì…,ë‚´ìš©,ìƒì„¸
+1,id,pk,,,VARCHAR(100),ì•„ì´ë””,
+2,password,,,not null,VARCHAR(100),íŒ¨ìŠ¤ì›Œë“œ,
+3,name,,,not null,VARCHAR(30),ì‚¬ìš©ì ì´ë¦„,
+4,email,,,not null,VARCHAR(100),ì´ë©”ì¼ì£¼ì†Œ,
+5,addr,,,not null,VARCHAR(100),ê±°ì£¼ì§€ ì£¼ì†Œ,
+6,enabled,,1,,INT,ì•„ì´ë”” ì‚¬ìš© ê°€ëŠ¥ ì—¬ë¶€,"0: ì‚¬ìš©ë¶ˆê°€, 1: ì‚¬ìš©ê°€ëŠ¥"
+7,authority,,ROLE_USER,,VARCHAR(20),ì ‘ê·¼ ê¶Œí•œ,"ROLE_ADMIN, ROLE_USER, ROLE_ANANYMOUS"
+8,point,,0,,INT,ì ë¦½í¬ì¸íŠ¸,
+9,reg_dt,,,,VARCHAR(8),ë“±ë¡ì¼ì,yyMMdd
+10,reg_tm,,,,VARCHAR(6),ë“±ë¡ì‹œê°„,HHmmss
+11,upd_dt,,,,VARCHAR(8),ìˆ˜ì •ì¼ì,
+12,upd_tm,,,,VARCHAR(6),ìˆ˜ì •ì‹œê°„,
 ,,,,,,,
-Å×ÀÌºí¸í,,,,,,tb_goods,»óÇ° Á¤º¸ Å×ÀÌºí
-¹øÈ£,ÄÃ·³¸í,Å°,default,null,Å¸ÀÔ,³»¿ë,»ó¼¼
-1,gds_cd,pk,,,VARCHAR(10),»óÇ°ÄÚµå,GdsCd(5) + Random(1) + seq(4)
-2,gds_type,,,not null,VARCHAR(20),»óÇ° ´ëºĞ·ù,"suit, outer, top, pants, acc, shoes & bags"
-3,color,,,,VARCHAR(4),»ö»ó,"c001: black, c002: white, c003: gray, ¡¦ ÄÚµåÈ­"
-4,size,,,not null,VARCHAR(4),»çÀÌÁî,"s001: m or 90, s002 : L or 95 ¡¦. ÄÚµåÈ­"
-5,gds_nm,,,not null,VARCHAR(300),»óÇ°¸í,
-6,gds_img,,,not null,VARCHAR(300),»óÇ° ÀÌ¹ÌÁö,
-7,price,,,not null,INT,°¡°İ,
-8,enabled,,1,,INT,»ç¿ë °¡´É ¿©ºÎ,"0: »ç¿ëºÒ°¡, 1: »ç¿ë°¡´É"
-9,quantity,,,not null,INT,Àç°í ¼ö·®,
-10,reg_dt,,,,VARCHAR(8),µî·ÏÀÏÀÚ,
-11,reg_tm,,,,VARCHAR(6),µî·Ï½Ã°£,
-12,upd_dt,,,,VARCHAR(8),¼öÁ¤ÀÏÀÚ,
-13,upd_tm,,,,VARCHAR(6),¼öÁ¤½Ã°£,
+í…Œì´ë¸”ëª…,,,,,,tb_goods,ìƒí’ˆ ì •ë³´ í…Œì´ë¸”
+ë²ˆí˜¸,ì»¬ëŸ¼ëª…,í‚¤,default,null,íƒ€ì…,ë‚´ìš©,ìƒì„¸
+1,gds_cd,pk,,,VARCHAR(10),ìƒí’ˆì½”ë“œ,GdsCd(5) + Random(1) + seq(4)
+2,gds_type,,,not null,VARCHAR(20),ìƒí’ˆ ëŒ€ë¶„ë¥˜,"suit, outer, top, pants, acc, shoes & bags"
+3,color,,,,VARCHAR(4),ìƒ‰ìƒ,"c001: black, c002: white, c003: gray, â€¦ ì½”ë“œí™”"
+4,size,,,not null,VARCHAR(4),ì‚¬ì´ì¦ˆ,"s001: m or 90, s002 : L or 95 â€¦. ì½”ë“œí™”"
+5,gds_nm,,,not null,VARCHAR(300),ìƒí’ˆëª…,
+6,gds_img,,,not null,VARCHAR(300),ìƒí’ˆ ì´ë¯¸ì§€,
+7,price,,,not null,INT,ê°€ê²©,
+8,enabled,,1,,INT,ì‚¬ìš© ê°€ëŠ¥ ì—¬ë¶€,"0: ì‚¬ìš©ë¶ˆê°€, 1: ì‚¬ìš©ê°€ëŠ¥"
+9,quantity,,,not null,INT,ì¬ê³  ìˆ˜ëŸ‰,
+10,reg_dt,,,,VARCHAR(8),ë“±ë¡ì¼ì,
+11,reg_tm,,,,VARCHAR(6),ë“±ë¡ì‹œê°„,
+12,upd_dt,,,,VARCHAR(8),ìˆ˜ì •ì¼ì,
+13,upd_tm,,,,VARCHAR(6),ìˆ˜ì •ì‹œê°„,
 ,,,,,,,
-Å×ÀÌºí¸í,,,,,,tb_order,ÁÖ¹® Á¤º¸ Å×ÀÌºí
-¹øÈ£,ÄÃ·³¸í,Å°,default,null,Å¸ÀÔ,³»¿ë,»ó¼¼
-1,txid,pk,,,VARCHAR(30),Æ®·£Àè¼Ç ¾ÆÀÌµğ, TXSFAW(6) + yyyyMMddHHmmss(14) + Random(6) + seq(4)
-2,ord_no,,,not null,VARCHAR(30),ÁÖ¹® ¹øÈ£,OrdNo(5) + GdsCd(10) + yyMMddHHmm(10) + Random(1) +seq(4)
-3,id,fk,,not null,VARCHAR(100),±¸¸ÅÀÚ ¾ÆÀÌµğ,references tb_user(id) on delete cascade
-4,gds_cd,fk,,not null,VARCHAR(10),»óÇ°ÄÚµå,references tb_goods(gds_cd) on delete cascade
-5,use_cl,,0,,INT,»óÇ° Ãë¼Ò ¿©ºÎ,"0: ÁÖ¹®, 1: Ãë¼Ò"
-7,enabled,,1,,INT,»ç¿ë °¡´É ¿©ºÎ,"0: »ç¿ëºÒ°¡, 1: »ç¿ë°¡´É"
-8,quantity,,1,,INT,ÁÖ¹® ¼ö·®,
-9,reg_dt,,,,VARCHAR(8),µî·ÏÀÏÀÚ,
-10,reg_tm,,,,VARCHAR(6),µî·Ï½Ã°£,
-11,upd_dt,,,,VARCHAR(8),¼öÁ¤ÀÏÀÚ,
-12,upd_tm,,,,VARCHAR(6),¼öÁ¤½Ã°£,
+í…Œì´ë¸”ëª…,,,,,,tb_order,ì£¼ë¬¸ ì •ë³´ í…Œì´ë¸”
+ë²ˆí˜¸,ì»¬ëŸ¼ëª…,í‚¤,default,null,íƒ€ì…,ë‚´ìš©,ìƒì„¸
+1,txid,pk,,,VARCHAR(30),íŠ¸ëœì­ì…˜ ì•„ì´ë””, TXSFAW(6) + yyyyMMddHHmmss(14) + Random(6) + seq(4)
+2,ord_no,,,not null,VARCHAR(30),ì£¼ë¬¸ ë²ˆí˜¸,OrdNo(5) + GdsCd(10) + yyMMddHHmm(10) + Random(1) +seq(4)
+3,id,fk,,not null,VARCHAR(100),êµ¬ë§¤ì ì•„ì´ë””,references tb_user(id) on delete cascade
+4,gds_cd,fk,,not null,VARCHAR(10),ìƒí’ˆì½”ë“œ,references tb_goods(gds_cd) on delete cascade
+5,use_cl,,0,,INT,ìƒí’ˆ ì·¨ì†Œ ì—¬ë¶€,"0: ì£¼ë¬¸, 1: ì·¨ì†Œ"
+7,enabled,,1,,INT,ì‚¬ìš© ê°€ëŠ¥ ì—¬ë¶€,"0: ì‚¬ìš©ë¶ˆê°€, 1: ì‚¬ìš©ê°€ëŠ¥"
+8,quantity,,1,,INT,ì£¼ë¬¸ ìˆ˜ëŸ‰,
+9,reg_dt,,,,VARCHAR(8),ë“±ë¡ì¼ì,
+10,reg_tm,,,,VARCHAR(6),ë“±ë¡ì‹œê°„,
+11,upd_dt,,,,VARCHAR(8),ìˆ˜ì •ì¼ì,
+12,upd_tm,,,,VARCHAR(6),ìˆ˜ì •ì‹œê°„,
 ,,,,,,,
-Å×ÀÌºí¸í,,,,,,tb_sequence,½ÃÄö½º °ü¸® Å×ÀÌºí
-¹øÈ£,ÄÃ·³¸í,Å°,default,null,Å¸ÀÔ,³»¿ë,»ó¼¼
-1,seq,,,not null,INT,½ÃÄö½º,
-2,seq_nm,pk,,not null,VARCHAR(50),½ÃÄö½º Å¸ÀÔ,ÇØ´ç ½ÃÄö½º°¡ °ü¸®ÇÏ´Â Å×ÀÌºí
+í…Œì´ë¸”ëª…,,,,,,tb_sequence,ì‹œí€€ìŠ¤ ê´€ë¦¬ í…Œì´ë¸”
+ë²ˆí˜¸,ì»¬ëŸ¼ëª…,í‚¤,default,null,íƒ€ì…,ë‚´ìš©,ìƒì„¸
+1,seq_nm,pk,,,VARCHAR(50),ì‹œí€€ìŠ¤ íƒ€ì…,í•´ë‹¹ ì‹œí€€ìŠ¤ê°€ ê´€ë¦¬í•˜ëŠ” í…Œì´ë¸”
+2,seq,,,not null,INT,ì‹œí€€ìŠ¤,
 ,,,,,,,
-Å×ÀÌºí¸í,,,,,,tb_code,ÄÚµå °ü¸® Å×ÀÌºí
-¹øÈ£,ÄÃ·³¸í,Å°,default,null,Å¸ÀÔ,³»¿ë,»ó¼¼
-1,code,pk,,,VARCHAR(4),ÄÚµå,"»ö»ó, »çÀÌÁî¿¡ ´ëÇÑ Á¤º¸¸¦ ÄÚµåÈ­ÇØ¼­ ÀúÀå"
-2,descript,,,not null,VARCHAR(100),¼³¸í,ÇØ´ç ÄÚµå¿¡ ´ëÇÑ ¼³¸í
+í…Œì´ë¸”ëª…,,,,,,tb_code,ì½”ë“œ ê´€ë¦¬ í…Œì´ë¸”
+ë²ˆí˜¸,ì»¬ëŸ¼ëª…,í‚¤,default,null,íƒ€ì…,ë‚´ìš©,ìƒì„¸
+1,code,pk,,,VARCHAR(4),ì½”ë“œ,"ìƒ‰ìƒ, ì‚¬ì´ì¦ˆì— ëŒ€í•œ ì •ë³´ë¥¼ ì½”ë“œí™”í•´ì„œ ì €ì¥"
+2,descript,,,not null,VARCHAR(100),ì„¤ëª…,í•´ë‹¹ ì½”ë“œì— ëŒ€í•œ ì„¤ëª…
 ,,,,,,,
-Å×ÀÌºí¸í,,,,,,tb_notice,°øÁö °Ô½ÃÆÇ °ü¸® Å×ÀÌºí
-¹øÈ£,ÄÃ·³¸í,Å°,default,null,Å¸ÀÔ,³»¿ë,»ó¼¼
+í…Œì´ë¸”ëª…,,,,,,tb_notice,ê³µì§€ ê²Œì‹œíŒ ê´€ë¦¬ í…Œì´ë¸”
+ë²ˆí˜¸,ì»¬ëŸ¼ëª…,í‚¤,default,null,íƒ€ì…,ë‚´ìš©,ìƒì„¸
 1,idx,pk,,,INT,,auto_increment
-2,title,,,not null,VARCHAR(200),±Û Á¦¸ñ,
-3,noti,,,,TEXT,±Û ³»¿ë,
-4,writer,fk,,not null,VARCHAR(100),±Û ÀÛ¼ºÀÚ(ROLE_ADMIN),references tb_user(id) on delete cascade
-5,reg_dt,,,,VARCHAR(8),µî·ÏÀÏÀÚ,
-6,reg_tm,,,,VARCHAR(6),µî·Ï½Ã°£,
-7,upd_dt,,,,VARCHAR(8),¼öÁ¤ÀÏÀÚ,
-8,upd_tm,,,,VARCHAR(6),¼öÁ¤½Ã°£,
-9,enabled,,1,,INT,»ç¿ë °¡´É ¿©ºÎ,
+2,title,,,not null,VARCHAR(200),ê¸€ ì œëª©,
+3,noti,,,,TEXT,ê¸€ ë‚´ìš©,
+4,writer,fk,,not null,VARCHAR(100),ê¸€ ì‘ì„±ì(ROLE_ADMIN),references tb_user(id) on delete cascade
+5,enabled,,1,,INT,ì‚¬ìš© ê°€ëŠ¥ ì—¬ë¶€,
+6,reg_dt,,,,VARCHAR(8),ë“±ë¡ì¼ì,
+7,reg_tm,,,,VARCHAR(6),ë“±ë¡ì‹œê°„,
+8,upd_dt,,,,VARCHAR(8),ìˆ˜ì •ì¼ì,
+9,upd_tm,,,,VARCHAR(6),ìˆ˜ì •ì‹œê°„,
 ,,,,,,,
-Å×ÀÌºí¸í,,,,,,tb_qna,Q & A °ü¸® Å×ÀÌºí
-¹øÈ£,ÄÃ·³¸í,Å°,default,null,Å¸ÀÔ,³»¿ë,»ó¼¼
+í…Œì´ë¸”ëª…,,,,,,tb_qna,Q & A ê´€ë¦¬ í…Œì´ë¸”
+ë²ˆí˜¸,ì»¬ëŸ¼ëª…,í‚¤,default,null,íƒ€ì…,ë‚´ìš©,ìƒì„¸
 1,idx,pk,,,INT,,auto_increment
-2,title,,,not null,VARCHAR(200),±Û Á¦¸ñ,
-3,content,,,,TEXT,±Û ³»¿ë,
-4,writer,fk,,not null,VARCHAR(100),"±Û ÀÛ¼ºÀÚ(ROLE_ADMIN, ROLE_USER)",references tb_user(id) on delete cascade
-5,gds_cd,fk,,,VARCHAR(10),»óÇ° ÄÚµå(¹®ÀÇ ³»¿ë¿¡ »óÇ°¿¡ °üÇÑ Á¤º¸¸¦ ³ÖÀ» ½Ã ÇÊ¿ä),references tb_goods(gds_cd) on delete cascade
-6,reg_dt,,,,VARCHAR(8),µî·ÏÀÏÀÚ,
-7,reg_tm,,,,VARCHAR(6),µî·Ï½Ã°£,
-8,upd_dt,,,,VARCHAR(8),¼öÁ¤ÀÏÀÚ,
-9,upd_tm,,,,VARCHAR(6),¼öÁ¤½Ã°£,
-10,enabled,,1,,INT,»ç¿ë °¡´É ¿©ºÎ,
+2,title,,,not null,VARCHAR(200),ê¸€ ì œëª©,
+3,content,,,,TEXT,ê¸€ ë‚´ìš©,
+4,writer,fk,,not null,VARCHAR(100),"ê¸€ ì‘ì„±ì(ROLE_ADMIN, ROLE_USER)",references tb_user(id) on delete cascade
+5,gds_cd,fk,,,VARCHAR(10),ìƒí’ˆ ì½”ë“œ(ë¬¸ì˜ ë‚´ìš©ì— ìƒí’ˆì— ê´€í•œ ì •ë³´ë¥¼ ë„£ì„ ì‹œ í•„ìš”),references tb_goods(gds_cd) on delete cascade
+6,enabled,,1,,INT,ì‚¬ìš© ê°€ëŠ¥ ì—¬ë¶€,
+7,reg_dt,,,,VARCHAR(8),ë“±ë¡ì¼ì,
+8,reg_tm,,,,VARCHAR(6),ë“±ë¡ì‹œê°„,
+9,upd_dt,,,,VARCHAR(8),ìˆ˜ì •ì¼ì,
+10,upd_tm,,,,VARCHAR(6),ìˆ˜ì •ì‹œê°„,
 ,,,,,,,
-Å×ÀÌºí¸í,,,,,,tb_reply,°Ô½ÃÆÇ ´ñ±Û °ü¸® Å×ÀÌºí
-¹øÈ£,ÄÃ·³¸í,Å°,default,null,Å¸ÀÔ,³»¿ë,»ó¼¼
+í…Œì´ë¸”ëª…,,,,,,tb_reply,ê²Œì‹œíŒ ëŒ“ê¸€ ê´€ë¦¬ í…Œì´ë¸”
+ë²ˆí˜¸,ì»¬ëŸ¼ëª…,í‚¤,default,null,íƒ€ì…,ë‚´ìš©,ìƒì„¸
 1,rno,pk,,,INT,,auto_increment
-2,writer,fk,,not null,VARCHAR(100),´ñ±Û ÀÛ¼ºÀÚ(ROLE_ADMIN),references tb_user(id) on delete cascade
-3,qna_idx,fk,,not null,INT,´ñ±ÛÀÌ ´Ş¸° qnaÀÇ Å°°ª,references tb_qna(idx) on delete cascade
-4,reply,,,,TEXT,´ñ±Û ³»¿ë,
-5,reg_dt,,,,VARCHAR(8),µî·ÏÀÏÀÚ,
-6,reg_tm,,,,VARCHAR(6),µî·Ï½Ã°£,
-7,upd_dt,,,,VARCHAR(8),¼öÁ¤ÀÏÀÚ,
-8,upd_tm,,,,VARCHAR(6),¼öÁ¤½Ã°£,
+2,writer,fk,,not null,VARCHAR(100),ëŒ“ê¸€ ì‘ì„±ì(ROLE_ADMIN),references tb_user(id) on delete cascade
+3,qna_idx,fk,,not null,INT,ëŒ“ê¸€ì´ ë‹¬ë¦° qnaì˜ í‚¤ê°’,references tb_qna(idx) on delete cascade
+4,reply,,,,TEXT,ëŒ“ê¸€ ë‚´ìš©,
+5,reg_dt,,,,VARCHAR(8),ë“±ë¡ì¼ì,
+6,reg_tm,,,,VARCHAR(6),ë“±ë¡ì‹œê°„,
+7,upd_dt,,,,VARCHAR(8),ìˆ˜ì •ì¼ì,
+8,upd_tm,,,,VARCHAR(6),ìˆ˜ì •ì‹œê°„,
 ,,,,,,,
-Å×ÀÌºí¸í,,,,,,tb_trans_result,°áÁ¦ °á°ú °ü¸® Å×ÀÌºí
-¹øÈ£,ÄÃ·³¸í,Å°,default,null,Å¸ÀÔ,³»¿ë,»ó¼¼
+í…Œì´ë¸”ëª…,,,,,,tb_trans_result,ê²°ì œ ê²°ê³¼ ê´€ë¦¬ í…Œì´ë¸”
+ë²ˆí˜¸,ì»¬ëŸ¼ëª…,í‚¤,default,null,íƒ€ì…,ë‚´ìš©,ìƒì„¸
 1,txid,pk,,,VARCHAR(30),,

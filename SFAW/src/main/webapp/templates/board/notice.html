@@ -9,14 +9,21 @@
             </tr>
         </thead>
         <tbody>
-       		<tr class="text-center">
-       			<td>1</td>
-       			<td>제목</td>
-       			<td>박종태</td>
-       			<td>2018.02.15 15:29</td>
+       		<tr class="text-center" ng-repeat="element in notiList">
+       			<td ng-bind="element.idx"></td>
+       			<td ng-bind="element.title"></td>
+       			<td ng-bind="element.writer"></td>
+       			<td ng-bind="element.regDt"></td>
        		</tr>
         </tbody>
     </table>
+    <div id="page-display">
+   		<a id="prev" href="" class="fa fa-chevron-left" ng-show="canPrev"></a>
+   		<div ng-repeat="arr in pageNumArray">
+	   		<a href={{arr.url}}>{{arr.pageNum}}</a>
+   		</div>
+   		<a id="next" href="" class="fa fa-chevron-right" ng-show="canNext"></a>
+    </div>
 </section>
 <!-- <tr ng-repeat="tmp in customerList" repeat-done> -->
 <!-- 			<td ng-bind="tmp.ID"></td> -->

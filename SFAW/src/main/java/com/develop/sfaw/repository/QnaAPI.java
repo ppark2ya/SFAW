@@ -7,6 +7,7 @@ public class QnaAPI {
 	private String content;
 	private String writer;
 	private String gdsCd;
+	private int enabled;
 	private String regDt;
 	private String regTm;
 	private String updDt;
@@ -65,6 +66,12 @@ public class QnaAPI {
 	}
 	public void setUpdTm(String updTm) {
 		this.updTm = updTm;
+	}
+	public int getEnabled() {
+		return enabled;
+	}
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
 	}
 
 }

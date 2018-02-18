@@ -67,29 +67,45 @@ SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 	}
 })
 .controller("noticeCtrl", function($scope, $http, $routeParams){
-	var pageNum = $routeParams.pageNum;
 	angular.element(document).ready(function(){
 		$http({
-			url: "/notice/getNotiList/" + pageNum,
+			url: "/notice/getNotiList/" + $routeParams.pageNum,
 			method: "GET",
-			params: {}
 		}).success(function(response){
+			// 게시판 글 목록 리스트
+			$scope.notiList = response.notiList;
+
+			// 페이징 처리 정보 pageInfo
+			var info = response.pageInfo;
+			$scope.pageNumArray = [];
+
+			for(var i = info.firstPage; i <= info.lastPage; i++){
+				var obj = {};
+				obj.pageNum = i;
+				obj.url = "/notice/" + i;
+				$scope.pageNumArray.push(obj);
+			}
+
+			// 이전 페이지가 없을 때 화살표 삭제
+			if(info.prevPage === 0){
+				$scope.canPrev = false;
+			}else{
+				$scope.canPrev = true;
+				$scope.prevPage = info.prevPage;
+				var prev = document.querySelector("#prev");
+				prev.setAttribute("href", "/notice/" + info.prevPage);
+			}
+			// 다음 페이지가 없을 때 화살표 삭제
+			if(info.nextPage === 0){
+				$scope.canNext = false;
+			}else{
+				$scope.canNext = true;
+				$scope.nextPage = info.nextPage;
+				var next = document.querySelector("#next")
+				next.setAttribute("href", "/notice/" + info.nextPage);
+			}
 
 		});
 	});
-
-	$scope.prevPage = function(){
-		$http({
-			url: "/notice/prevPage",
-			method: "GET"
-		})
-	}
-
-	$scope.nextPage = function(){
-		$http({
-			url: "/notice/nextPage",
-			method: "GET"
-		})
-	}
 
 })
