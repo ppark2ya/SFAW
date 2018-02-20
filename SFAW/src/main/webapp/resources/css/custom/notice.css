@@ -17,3 +17,6 @@
 #page-display div a{
 	padding: 0 6px;
 }
+#page-display .active{
+	color:#dd3131 !important;
+}

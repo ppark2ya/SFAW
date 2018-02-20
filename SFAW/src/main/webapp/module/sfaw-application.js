@@ -67,6 +67,8 @@ SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 	}
 })
 .controller("noticeCtrl", function($scope, $http, $routeParams){
+
+	// 페이징 요청
 	angular.element(document).ready(function(){
 		$http({
 			url: "/notice/getNotiList/" + $routeParams.pageNum,
@@ -80,9 +82,10 @@ SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 			$scope.pageNumArray = [];
 
 			for(var i = info.firstPage; i <= info.lastPage; i++){
-				var obj = {};
-				obj.pageNum = i;
-				obj.url = "/notice/" + i;
+				var obj = {
+					pageNum : i,
+					url : "/notice/" + i
+				};
 				$scope.pageNumArray.push(obj);
 			}
 
@@ -92,7 +95,7 @@ SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 			}else{
 				$scope.canPrev = true;
 				$scope.prevPage = info.prevPage;
-				var prev = document.querySelector("#prev");
+				var prev = document.querySelector("#page-display a:first-child");
 				prev.setAttribute("href", "/notice/" + info.prevPage);
 			}
 			// 다음 페이지가 없을 때 화살표 삭제
@@ -101,11 +104,14 @@ SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 			}else{
 				$scope.canNext = true;
 				$scope.nextPage = info.nextPage;
-				var next = document.querySelector("#next")
+				var next = document.querySelector("#page-display a:last-child")
 				next.setAttribute("href", "/notice/" + info.nextPage);
 			}
 
+			// 현재 페이지 active 표시
+			$scope.activeNum = $routeParams.pageNum;
 		});
 	});
+
 
 })

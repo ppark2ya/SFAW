@@ -11,19 +11,17 @@
         <tbody>
        		<tr class="text-center" ng-repeat="element in notiList">
        			<td ng-bind="element.idx"></td>
-       			<td ng-bind="element.title"></td>
+       			<td><a href="">{{element.title}}</a></td>
        			<td ng-bind="element.writer"></td>
        			<td ng-bind="element.regDt"></td>
        		</tr>
         </tbody>
     </table>
     <div id="page-display">
-   		<a id="prev" href="" class="fa fa-chevron-left" ng-show="canPrev"></a>
+   		<a class="fa fa-chevron-left" ng-show="canPrev"></a>
    		<div ng-repeat="arr in pageNumArray">
-	   		<a href={{arr.url}}>{{arr.pageNum}}</a>
+	   		<a href={{arr.url}} ng-class="{'active' : arr.pageNum == activeNum}">{{arr.pageNum}}</a>
    		</div>
-   		<a id="next" href="" class="fa fa-chevron-right" ng-show="canNext"></a>
+   		<a class="fa fa-chevron-right" ng-show="canNext"></a>
     </div>
 </section>
-<!-- <tr ng-repeat="tmp in customerList" repeat-done> -->
-<!-- 			<td ng-bind="tmp.ID"></td> -->
