@@ -69,49 +69,45 @@ SFAW_APP.config(function($routeProvider, $httpProvider, $locationProvider) {
 .controller("noticeCtrl", function($scope, $http, $routeParams){
 
 	// 페이징 요청
-	angular.element(document).ready(function(){
-		$http({
-			url: "/notice/getNotiList/" + $routeParams.pageNum,
-			method: "GET",
-		}).success(function(response){
-			// 게시판 글 목록 리스트
-			$scope.notiList = response.notiList;
+	$http({
+		url: "/notice/getNotiList/" + $routeParams.pageNum,
+		method: "GET",
+	}).success(function(response){
+		// 게시판 글 목록 리스트
+		$scope.notiList = response.notiList;
 
-			// 페이징 처리 정보 pageInfo
-			var info = response.pageInfo;
-			$scope.pageNumArray = [];
+		// 페이징 처리 정보 pageInfo
+		var info = response.pageInfo;
+		$scope.pageNumArray = [];
 
-			for(var i = info.firstPage; i <= info.lastPage; i++){
-				var obj = {
-					pageNum : i,
-					url : "/notice/" + i
-				};
-				$scope.pageNumArray.push(obj);
-			}
+		for(var i = info.firstPage; i <= info.lastPage; i++){
+			var obj = {
+				pageNum : i,
+				url : "/notice/" + i
+			};
+			$scope.pageNumArray.push(obj);
+		}
 
-			// 이전 페이지가 없을 때 화살표 삭제
-			if(info.prevPage === 0){
-				$scope.canPrev = false;
-			}else{
-				$scope.canPrev = true;
-				$scope.prevPage = info.prevPage;
-				var prev = document.querySelector("#page-display a:first-child");
-				prev.setAttribute("href", "/notice/" + info.prevPage);
-			}
-			// 다음 페이지가 없을 때 화살표 삭제
-			if(info.nextPage === 0){
-				$scope.canNext = false;
-			}else{
-				$scope.canNext = true;
-				$scope.nextPage = info.nextPage;
-				var next = document.querySelector("#page-display a:last-child")
-				next.setAttribute("href", "/notice/" + info.nextPage);
-			}
+		// 이전 페이지가 없을 때 화살표 삭제
+		if(info.prevPage === 0){
+			$scope.canPrev = false;
+		}else{
+			$scope.canPrev = true;
+			$scope.prevPage = info.prevPage;
+			var prev = document.querySelector("#page-display a:first-child");
+			prev.setAttribute("href", "/notice/" + info.prevPage);
+		}
+		// 다음 페이지가 없을 때 화살표 삭제
+		if(info.nextPage === 0){
+			$scope.canNext = false;
+		}else{
+			$scope.canNext = true;
+			$scope.nextPage = info.nextPage;
+			var next = document.querySelector("#page-display a:last-child")
+			next.setAttribute("href", "/notice/" + info.nextPage);
+		}
 
-			// 현재 페이지 active 표시
-			$scope.activeNum = $routeParams.pageNum;
-		});
+		// 현재 페이지 active 표시
+		$scope.activeNum = $routeParams.pageNum;
 	});
-
-
 })
